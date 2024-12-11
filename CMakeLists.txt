@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.10)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+file(GLOB src ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+add_library(ImGuizmo STATIC ${src})
+target_include_directories(ImGuizmo PRIVATE ${CMAKE_SOURCE_DIR}/Hazel/vendor/imgui)
+target_link_libraries(ImGuizmo PRIVATE imgui)
